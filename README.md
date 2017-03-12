@@ -1,2 +1,5 @@
 # google_testing_assignment
-implementation of three famous testing problems as follows:
+toy samples of implementing three famous testing problems as follows:
+1. Triangle
+2. NextDate
+3. Commission
