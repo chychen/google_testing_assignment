@@ -29,7 +29,7 @@ CXXFLAGS += -g -Wall -Wextra -pthread
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = triangle_unittest
+TESTS = triangle_WeakFormTesting triangle_StrongFormTesting
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -71,12 +71,19 @@ gtest_main.a : gtest-all.o gtest_main.o
 # gtest_main.a, depending on whether it defines its own main()
 # function.
 
-triangle.o : $(USER_DIR)/triangle.cpp $(USER_DIR)/triangle.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/triangle.cpp
+assignment_1.o : $(USER_DIR)/assignment_1.cpp $(USER_DIR)/assignment_1.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/assignment_1.cpp
 
-triangle_unittest.o : $(USER_DIR)/triangle_unittest.cpp \
-                     $(USER_DIR)/triangle.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/triangle_unittest.cpp
+triangle_StrongFormTesting.o : $(USER_DIR)/triangle_StrongFormTesting.cpp \
+                     $(USER_DIR)/assignment_1.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/triangle_StrongFormTesting.cpp
 
-triangle_unittest : triangle.o triangle_unittest.o gtest_main.a
+triangle_WeakFormTesting.o : $(USER_DIR)/triangle_WeakFormTesting.cpp \
+                     $(USER_DIR)/assignment_1.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/triangle_WeakFormTesting.cpp
+
+triangle_StrongFormTesting : assignment_1.o triangle_StrongFormTesting.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+
+triangle_WeakFormTesting : assignment_1.o triangle_WeakFormTesting.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
