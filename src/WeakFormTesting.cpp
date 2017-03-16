@@ -16,3 +16,19 @@ TEST(TriangleTest, WeakFormTesting){
     EXPECT_EQ(Triangle(5, 201, 5), "Value if b is not in the range of permitted values");
     EXPECT_EQ(Triangle(5, 5, 201), "Value if c is not in the range of permitted values");
 }
+
+TEST(NextDateTest, StrongFormTesting){
+    //Weak Noraml part
+    EXPECT_EQ(NextDate(6, 14, 2000), "6/15/2000");
+    EXPECT_EQ(NextDate(7, 29, 1912), "7/30/2000");
+    EXPECT_EQ(NextDate(2, 30, 1912), "Invalid input date");
+    EXPECT_EQ(NextDate(6, 31, 1912), "Invalid input date");
+    //Weak Robust part
+    EXPECT_EQ(NextDate(6, 15, 1912), "6/16/1912");
+    EXPECT_EQ(NextDate(-1, 15, 1912), "month not in 1 … 12");
+    EXPECT_EQ(NextDate(13, 15, 1912), "month not in 1 … 12");
+    EXPECT_EQ(NextDate(6, -1, 1912), "day not in 1 … 31");
+    EXPECT_EQ(NextDate(6, 32, 1912), "day not in 1 … 31");
+    EXPECT_EQ(NextDate(6, 15, 1811), "year not in 1812 … 2012");
+    EXPECT_EQ(NextDate(6, 15, 2013), "year not in 1812 … 2012");
+}
