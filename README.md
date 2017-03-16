@@ -15,4 +15,4 @@ Instructions to run:
 5. make
 6. ./StrongFormTesting or ./WeekFormTesting
 
-* note: testing records are all stored in folder test_record as "{$date}_{$time}_{$type}.txt"
+* note: testing records are all stored in folder test_record as "{$date}\_{$time}\_{$type}.txt"
