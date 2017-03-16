@@ -1,0 +1,127 @@
+Running main() from gtest_main.cc
+[==========] Running 3 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from TriangleTest
+[ RUN      ] TriangleTest.WeakFormTesting
+./WeakFormTesting.cpp:12: Failure
+      Expected: Triangle(-1, 5, 5)
+      Which is: "Value of a is not in the range of permitted values"
+To be equal to: "Value if a is not in the range of permitted values"
+./WeakFormTesting.cpp:13: Failure
+      Expected: Triangle(5, -1, 5)
+      Which is: "Value of b is not in the range of permitted values"
+To be equal to: "Value if b is not in the range of permitted values"
+./WeakFormTesting.cpp:14: Failure
+      Expected: Triangle(5, 5, -1)
+      Which is: "Value of c is not in the range of permitted values"
+To be equal to: "Value if c is not in the range of permitted values"
+./WeakFormTesting.cpp:15: Failure
+      Expected: Triangle(201, 5, 5)
+      Which is: "Value of a is not in the range of permitted values"
+To be equal to: "Value if a is not in the range of permitted values"
+./WeakFormTesting.cpp:16: Failure
+      Expected: Triangle(5, 201, 5)
+      Which is: "Value of b is not in the range of permitted values"
+To be equal to: "Value if b is not in the range of permitted values"
+./WeakFormTesting.cpp:17: Failure
+      Expected: Triangle(5, 5, 201)
+      Which is: "Value of c is not in the range of permitted values"
+To be equal to: "Value if c is not in the range of permitted values"
+[  FAILED  ] TriangleTest.WeakFormTesting (1 ms)
+[----------] 1 test from TriangleTest (1 ms total)
+
+[----------] 1 test from NextDateTest
+[ RUN      ] NextDateTest.WeakFormTesting
+./WeakFormTesting.cpp:22: Failure
+      Expected: NextDate(6, 14, 2000)
+      Which is: ""
+To be equal to: "6/15/2000"
+./WeakFormTesting.cpp:23: Failure
+      Expected: NextDate(7, 29, 1912)
+      Which is: ""
+To be equal to: "7/30/2000"
+./WeakFormTesting.cpp:24: Failure
+      Expected: NextDate(2, 30, 1912)
+      Which is: ""
+To be equal to: "Invalid input date"
+./WeakFormTesting.cpp:25: Failure
+      Expected: NextDate(6, 31, 1912)
+      Which is: ""
+To be equal to: "Invalid input date"
+./WeakFormTesting.cpp:27: Failure
+      Expected: NextDate(6, 15, 1912)
+      Which is: ""
+To be equal to: "6/16/1912"
+./WeakFormTesting.cpp:28: Failure
+      Expected: NextDate(-1, 15, 1912)
+      Which is: ""
+To be equal to: "month not in 1...12"
+./WeakFormTesting.cpp:29: Failure
+      Expected: NextDate(13, 15, 1912)
+      Which is: ""
+To be equal to: "month not in 1...12"
+./WeakFormTesting.cpp:30: Failure
+      Expected: NextDate(6, -1, 1912)
+      Which is: ""
+To be equal to: "day not in 1...31"
+./WeakFormTesting.cpp:31: Failure
+      Expected: NextDate(6, 32, 1912)
+      Which is: ""
+To be equal to: "day not in 1...31"
+./WeakFormTesting.cpp:32: Failure
+      Expected: NextDate(6, 15, 1811)
+      Which is: ""
+To be equal to: "year not in 1812...2012"
+./WeakFormTesting.cpp:33: Failure
+      Expected: NextDate(6, 15, 2013)
+      Which is: ""
+To be equal to: "year not in 1812...2012"
+[  FAILED  ] NextDateTest.WeakFormTesting (1 ms)
+[----------] 1 test from NextDateTest (1 ms total)
+
+[----------] 1 test from CommissionTest
+[ RUN      ] CommissionTest.WeakFormTesting
+./WeakFormTesting.cpp:38: Failure
+      Expected: Commission(10, 10, 10)
+      Which is: ""
+To be equal to: "$100"
+./WeakFormTesting.cpp:39: Failure
+      Expected: Commission(-1, 40, 45)
+      Which is: ""
+To be equal to: "Program terminates"
+./WeakFormTesting.cpp:40: Failure
+      Expected: Commission(-2, 40, 45)
+      Which is: ""
+To be equal to: "locks not in 1...70"
+./WeakFormTesting.cpp:41: Failure
+      Expected: Commission(71, 40, 45)
+      Which is: ""
+To be equal to: "locks not in 1...70"
+./WeakFormTesting.cpp:42: Failure
+      Expected: Commission(35, -1, 45)
+      Which is: ""
+To be equal to: "stocks not in 1...80"
+./WeakFormTesting.cpp:43: Failure
+      Expected: Commission(35, 81, 45)
+      Which is: ""
+To be equal to: "stocks not in 1...80"
+./WeakFormTesting.cpp:44: Failure
+      Expected: Commission(35, 40, -1)
+      Which is: ""
+To be equal to: "barrels not in 1...90"
+./WeakFormTesting.cpp:45: Failure
+      Expected: Commission(35, 40, 91)
+      Which is: ""
+To be equal to: "barrels not in 1...90"
+[  FAILED  ] CommissionTest.WeakFormTesting (0 ms)
+[----------] 1 test from CommissionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 3 test cases ran. (2 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] TriangleTest.WeakFormTesting
+[  FAILED  ] NextDateTest.WeakFormTesting
+[  FAILED  ] CommissionTest.WeakFormTesting
+
+ 3 FAILED TESTS
