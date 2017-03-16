@@ -1,0 +1,87 @@
+Running main() from gtest_main.cc
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from TriangleTest
+[ RUN      ] TriangleTest.StrongFormTesting
+./triangle_StrongFormTesting.cpp:7: Failure
+      Expected: Triangle(5, 5, 5)
+      Which is: ""
+To be equal to: "Equilateral"
+./triangle_StrongFormTesting.cpp:8: Failure
+      Expected: Triangle(2, 2, 3)
+      Which is: ""
+To be equal to: "Isosceles"
+./triangle_StrongFormTesting.cpp:9: Failure
+      Expected: Triangle(3, 4, 5)
+      Which is: ""
+To be equal to: "Scalene"
+./triangle_StrongFormTesting.cpp:10: Failure
+      Expected: Triangle(4, 1, 2)
+      Which is: ""
+To be equal to: "Not a triangle"
+./triangle_StrongFormTesting.cpp:12: Failure
+      Expected: Triangle(-1, 5, 5)
+      Which is: ""
+To be equal to: "Value if a is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:13: Failure
+      Expected: Triangle(5, -1, 5)
+      Which is: ""
+To be equal to: "Value if b is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:14: Failure
+      Expected: Triangle(5, 5, -1)
+      Which is: ""
+To be equal to: "Value if c is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:15: Failure
+      Expected: Triangle(201, 5, 5)
+      Which is: ""
+To be equal to: "Value if a is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:16: Failure
+      Expected: Triangle(5, 201, 5)
+      Which is: ""
+To be equal to: "Value if b is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:17: Failure
+      Expected: Triangle(5, 5, 201)
+      Which is: ""
+To be equal to: "Value if c is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:19: Failure
+      Expected: Triangle(-1, -1, 5)
+      Which is: ""
+To be equal to: "Value if a, b is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:20: Failure
+      Expected: Triangle(5, -1, -1)
+      Which is: ""
+To be equal to: "Value if b, c is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:21: Failure
+      Expected: Triangle(-1, 5, -1)
+      Which is: ""
+To be equal to: "Value if a, c is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:22: Failure
+      Expected: Triangle(-1, -1, -1)
+      Which is: ""
+To be equal to: "Value if a, b, c is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:23: Failure
+      Expected: Triangle(201, 201, 5)
+      Which is: ""
+To be equal to: "Value if a, b is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:24: Failure
+      Expected: Triangle(5, 201, 201)
+      Which is: ""
+To be equal to: "Value if b, c is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:25: Failure
+      Expected: Triangle(201, 5, 201)
+      Which is: ""
+To be equal to: "Value if a, c is not in the range of permitted values"
+./triangle_StrongFormTesting.cpp:26: Failure
+      Expected: Triangle(201, 201, 201)
+      Which is: ""
+To be equal to: "Value if a, b, c is not in the range of permitted values"
+[  FAILED  ] TriangleTest.StrongFormTesting (1 ms)
+[----------] 1 test from TriangleTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] TriangleTest.StrongFormTesting
+
+ 1 FAILED TEST
