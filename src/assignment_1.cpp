@@ -37,3 +37,7 @@ string Triangle(int a, int b, int c){
 string NextDate(int month, int day, int year){
     return "";
 }
+
+string Commission(int locks, int stocks, int barrels){
+    return "";
+}

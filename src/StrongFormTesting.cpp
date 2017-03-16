@@ -34,12 +34,12 @@ TEST(NextDateTest, StrongFormTesting){
     EXPECT_EQ(NextDate(6, 31, 1912), "Invalid input date");
     //Weak Robust part
     EXPECT_EQ(NextDate(6, 15, 1912), "6/16/1912");
-    EXPECT_EQ(NextDate(-1, 15, 1912), "month not in 1 … 12");
-    EXPECT_EQ(NextDate(13, 15, 1912), "month not in 1 … 12");
-    EXPECT_EQ(NextDate(6, -1, 1912), "day not in 1 … 31");
-    EXPECT_EQ(NextDate(6, 32, 1912), "day not in 1 … 31");
-    EXPECT_EQ(NextDate(6, 15, 1811), "year not in 1812 … 2012");
-    EXPECT_EQ(NextDate(6, 15, 2013), "year not in 1812 … 2012");
+    EXPECT_EQ(NextDate(-1, 15, 1912), "month not in 1...12");
+    EXPECT_EQ(NextDate(13, 15, 1912), "month not in 1...12");
+    EXPECT_EQ(NextDate(6, -1, 1912), "day not in 1...31");
+    EXPECT_EQ(NextDate(6, 32, 1912), "day not in 1...31");
+    EXPECT_EQ(NextDate(6, 15, 1811), "year not in 1812...2012");
+    EXPECT_EQ(NextDate(6, 15, 2013), "year not in 1812...2012");
     //Strong Normal part
     EXPECT_EQ(NextDate(6, 14, 2000), "6/15/2000");
     EXPECT_EQ(NextDate(6, 14, 1996), "6/15/1996");
@@ -63,10 +63,30 @@ TEST(NextDateTest, StrongFormTesting){
     EXPECT_EQ(NextDate(7, 30, 1996), "7/31/1996");
     //Strong Robust part
     EXPECT_EQ(NextDate(-1, 15, 1912), "month not in 1...12");
-    EXPECT_EQ(NextDate(6, -1, 1912), "day not in 1 … 31");
-    EXPECT_EQ(NextDate(6, 15, 1811), "year not in 1812 … 2012");
-    EXPECT_EQ(NextDate(-1, -1, 1912), "month not in 1... 31\nday not in 1 … 31");
-    EXPECT_EQ(NextDate(6, -1, 1811), "day not in 1...31\nyear not in 1812 … 2012");
-    EXPECT_EQ(NextDate(-1, 15, 1811), "month not in 1...12\nyear not in 1812 … 2012");
-    EXPECT_EQ(NextDate(-1, -1, 1811), "month not in 1...12\nday not in 1...31\nyear not in 1812 … 2012");
+    EXPECT_EQ(NextDate(6, -1, 1912), "day not in 1...31");
+    EXPECT_EQ(NextDate(6, 15, 1811), "year not in 1812...2012");
+    EXPECT_EQ(NextDate(-1, -1, 1912), "month not in 1... 31\nday not in 1...31");
+    EXPECT_EQ(NextDate(6, -1, 1811), "day not in 1...31\nyear not in 1812...2012");
+    EXPECT_EQ(NextDate(-1, 15, 1811), "month not in 1...12\nyear not in 1812...2012");
+    EXPECT_EQ(NextDate(-1, -1, 1811), "month not in 1...12\nday not in 1...31\nyear not in 1812...2012");
+}
+
+TEST(CommissionTest, StrongFormTesting){
+    //Weak Robust part
+    EXPECT_EQ(Commission(10, 10, 10), "$100");
+    EXPECT_EQ(Commission(-1, 40, 45), "Program terminates");
+    EXPECT_EQ(Commission(-2, 40, 45), "locks not in 1...70");
+    EXPECT_EQ(Commission(71, 40, 45), "locks not in 1...70");
+    EXPECT_EQ(Commission(35, -1, 45), "stocks not in 1...80");
+    EXPECT_EQ(Commission(35, 81, 45), "stocks not in 1...80");
+    EXPECT_EQ(Commission(35, 40, -1), "barrels not in 1...90");
+    EXPECT_EQ(Commission(35, 40, 91), "barrels not in 1...90");
+    //Strong Robust part
+    EXPECT_EQ(Commission(-2, 40, 45), "locks not in 1...70");
+    EXPECT_EQ(Commission(35, -1, 45), "stocks not in 1...80");
+    EXPECT_EQ(Commission(35, 40, -2), "barrels not in 1...90");
+    EXPECT_EQ(Commission(-2, -1, 45), "locks not in 1...70\nstocks not in 1...80");
+    EXPECT_EQ(Commission(-2, 40, -1), "locks not in 1...70\nbarels not in 1...90");
+    EXPECT_EQ(Commission(35, -1, -1), "stocks not in 1...80\nbarrels not in 1...90");
+    EXPECT_EQ(Commission(-2, -1, -1), "locks not in 1...70\nstocks not in 1...80\nbarrels not in 1...90");
 }
