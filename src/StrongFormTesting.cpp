@@ -29,7 +29,7 @@ TEST(TriangleTest, StrongFormTesting){
 TEST(NextDateTest, StrongFormTesting){
     //Weak Noraml part
     EXPECT_EQ(NextDate(6, 14, 2000), "6/15/2000");
-    EXPECT_EQ(NextDate(7, 29, 1912), "7/30/2000");
+    EXPECT_EQ(NextDate(7, 29, 1912), "7/30/1912");
     EXPECT_EQ(NextDate(2, 30, 1912), "Invalid input date");
     EXPECT_EQ(NextDate(6, 31, 1912), "Invalid input date");
     //Weak Robust part
@@ -49,7 +49,7 @@ TEST(NextDateTest, StrongFormTesting){
     EXPECT_EQ(NextDate(6, 29, 2002), "6/30/2002");
     EXPECT_EQ(NextDate(6, 30, 2000), "7/1/2000");
     EXPECT_EQ(NextDate(6, 30, 1996), "7/1/1996");
-    EXPECT_EQ(NextDate(6, 30, 2002), "Invalid input date");
+    EXPECT_EQ(NextDate(6, 30, 2002), "7/1/2002");
     EXPECT_EQ(NextDate(6, 31, 2000), "Invalid input date");
     EXPECT_EQ(NextDate(6, 31, 1996), "Invalid input date");
     EXPECT_EQ(NextDate(6, 31, 2002), "Invalid input date");
@@ -65,7 +65,7 @@ TEST(NextDateTest, StrongFormTesting){
     EXPECT_EQ(NextDate(-1, 15, 1912), "month not in 1...12");
     EXPECT_EQ(NextDate(6, -1, 1912), "day not in 1...31");
     EXPECT_EQ(NextDate(6, 15, 1811), "year not in 1812...2012");
-    EXPECT_EQ(NextDate(-1, -1, 1912), "month not in 1... 31\nday not in 1...31");
+    EXPECT_EQ(NextDate(-1, -1, 1912), "month not in 1...12\nday not in 1...31");
     EXPECT_EQ(NextDate(6, -1, 1811), "day not in 1...31\nyear not in 1812...2012");
     EXPECT_EQ(NextDate(-1, 15, 1811), "month not in 1...12\nyear not in 1812...2012");
     EXPECT_EQ(NextDate(-1, -1, 1811), "month not in 1...12\nday not in 1...31\nyear not in 1812...2012");

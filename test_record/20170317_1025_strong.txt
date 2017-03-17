@@ -1,0 +1,129 @@
+Running main() from gtest_main.cc
+[==========] Running 3 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from TriangleTest
+[ RUN      ] TriangleTest.StrongFormTesting
+[       OK ] TriangleTest.StrongFormTesting (0 ms)
+[----------] 1 test from TriangleTest (0 ms total)
+
+[----------] 1 test from NextDateTest
+[ RUN      ] NextDateTest.StrongFormTesting
+./StrongFormTesting.cpp:32: Failure
+      Expected: NextDate(7, 29, 1912)
+      Which is: "7/30/1912"
+To be equal to: "7/30/2000"
+./StrongFormTesting.cpp:52: Failure
+      Expected: NextDate(6, 30, 2002)
+      Which is: "7/1/2002"
+To be equal to: "Invalid input date"
+./StrongFormTesting.cpp:68: Failure
+      Expected: NextDate(-1, -1, 1912)
+      Which is: "month not in 1...12\nday not in 1...31"
+To be equal to: "month not in 1... 31\nday not in 1...31"
+With diff:
+@@ -1,2 +1,2 @@
+-month not in 1...12
++month not in 1... 31
+ day not in 1...31
+
+[  FAILED  ] NextDateTest.StrongFormTesting (0 ms)
+[----------] 1 test from NextDateTest (0 ms total)
+
+[----------] 1 test from CommissionTest
+[ RUN      ] CommissionTest.StrongFormTesting
+./StrongFormTesting.cpp:76: Failure
+      Expected: Commission(10, 10, 10)
+      Which is: ""
+To be equal to: "$100"
+./StrongFormTesting.cpp:77: Failure
+      Expected: Commission(-1, 40, 45)
+      Which is: ""
+To be equal to: "Program terminates"
+./StrongFormTesting.cpp:78: Failure
+      Expected: Commission(-2, 40, 45)
+      Which is: ""
+To be equal to: "locks not in 1...70"
+./StrongFormTesting.cpp:79: Failure
+      Expected: Commission(71, 40, 45)
+      Which is: ""
+To be equal to: "locks not in 1...70"
+./StrongFormTesting.cpp:80: Failure
+      Expected: Commission(35, -1, 45)
+      Which is: ""
+To be equal to: "stocks not in 1...80"
+./StrongFormTesting.cpp:81: Failure
+      Expected: Commission(35, 81, 45)
+      Which is: ""
+To be equal to: "stocks not in 1...80"
+./StrongFormTesting.cpp:82: Failure
+      Expected: Commission(35, 40, -1)
+      Which is: ""
+To be equal to: "barrels not in 1...90"
+./StrongFormTesting.cpp:83: Failure
+      Expected: Commission(35, 40, 91)
+      Which is: ""
+To be equal to: "barrels not in 1...90"
+./StrongFormTesting.cpp:85: Failure
+      Expected: Commission(-2, 40, 45)
+      Which is: ""
+To be equal to: "locks not in 1...70"
+./StrongFormTesting.cpp:86: Failure
+      Expected: Commission(35, -1, 45)
+      Which is: ""
+To be equal to: "stocks not in 1...80"
+./StrongFormTesting.cpp:87: Failure
+      Expected: Commission(35, 40, -2)
+      Which is: ""
+To be equal to: "barrels not in 1...90"
+./StrongFormTesting.cpp:88: Failure
+      Expected: Commission(-2, -1, 45)
+      Which is: ""
+To be equal to: "locks not in 1...70\nstocks not in 1...80"
+With diff:
+@@ -1,1 +1,2 @@
+-""
++locks not in 1...70
++stocks not in 1...80
+
+./StrongFormTesting.cpp:89: Failure
+      Expected: Commission(-2, 40, -1)
+      Which is: ""
+To be equal to: "locks not in 1...70\nbarels not in 1...90"
+With diff:
+@@ -1,1 +1,2 @@
+-""
++locks not in 1...70
++barels not in 1...90
+
+./StrongFormTesting.cpp:90: Failure
+      Expected: Commission(35, -1, -1)
+      Which is: ""
+To be equal to: "stocks not in 1...80\nbarrels not in 1...90"
+With diff:
+@@ -1,1 +1,2 @@
+-""
++stocks not in 1...80
++barrels not in 1...90
+
+./StrongFormTesting.cpp:91: Failure
+      Expected: Commission(-2, -1, -1)
+      Which is: ""
+To be equal to: "locks not in 1...70\nstocks not in 1...80\nbarrels not in 1...90"
+With diff:
+@@ -1,1 +1,3 @@
+-""
++locks not in 1...70
++stocks not in 1...80
++barrels not in 1...90
+
+[  FAILED  ] CommissionTest.StrongFormTesting (0 ms)
+[----------] 1 test from CommissionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 3 test cases ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] NextDateTest.StrongFormTesting
+[  FAILED  ] CommissionTest.StrongFormTesting
+
+ 2 FAILED TESTS

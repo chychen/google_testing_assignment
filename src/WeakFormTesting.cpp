@@ -20,7 +20,7 @@ TEST(TriangleTest, WeakFormTesting){
 TEST(NextDateTest, WeakFormTesting){
     //Weak Noraml part
     EXPECT_EQ(NextDate(6, 14, 2000), "6/15/2000");
-    EXPECT_EQ(NextDate(7, 29, 1912), "7/30/2000");
+    EXPECT_EQ(NextDate(7, 29, 1912), "7/30/1912");
     EXPECT_EQ(NextDate(2, 30, 1912), "Invalid input date");
     EXPECT_EQ(NextDate(6, 31, 1912), "Invalid input date");
     //Weak Robust part

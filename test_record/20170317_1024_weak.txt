@@ -1,0 +1,57 @@
+Running main() from gtest_main.cc
+[==========] Running 3 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from TriangleTest
+[ RUN      ] TriangleTest.WeakFormTesting
+[       OK ] TriangleTest.WeakFormTesting (0 ms)
+[----------] 1 test from TriangleTest (0 ms total)
+
+[----------] 1 test from NextDateTest
+[ RUN      ] NextDateTest.WeakFormTesting
+[       OK ] NextDateTest.WeakFormTesting (0 ms)
+[----------] 1 test from NextDateTest (0 ms total)
+
+[----------] 1 test from CommissionTest
+[ RUN      ] CommissionTest.WeakFormTesting
+./WeakFormTesting.cpp:38: Failure
+      Expected: Commission(10, 10, 10)
+      Which is: ""
+To be equal to: "$100"
+./WeakFormTesting.cpp:39: Failure
+      Expected: Commission(-1, 40, 45)
+      Which is: ""
+To be equal to: "Program terminates"
+./WeakFormTesting.cpp:40: Failure
+      Expected: Commission(-2, 40, 45)
+      Which is: ""
+To be equal to: "locks not in 1...70"
+./WeakFormTesting.cpp:41: Failure
+      Expected: Commission(71, 40, 45)
+      Which is: ""
+To be equal to: "locks not in 1...70"
+./WeakFormTesting.cpp:42: Failure
+      Expected: Commission(35, -1, 45)
+      Which is: ""
+To be equal to: "stocks not in 1...80"
+./WeakFormTesting.cpp:43: Failure
+      Expected: Commission(35, 81, 45)
+      Which is: ""
+To be equal to: "stocks not in 1...80"
+./WeakFormTesting.cpp:44: Failure
+      Expected: Commission(35, 40, -1)
+      Which is: ""
+To be equal to: "barrels not in 1...90"
+./WeakFormTesting.cpp:45: Failure
+      Expected: Commission(35, 40, 91)
+      Which is: ""
+To be equal to: "barrels not in 1...90"
+[  FAILED  ] CommissionTest.WeakFormTesting (1 ms)
+[----------] 1 test from CommissionTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 3 test cases ran. (1 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] CommissionTest.WeakFormTesting
+
+ 1 FAILED TEST
