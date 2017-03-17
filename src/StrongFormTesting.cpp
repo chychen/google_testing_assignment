@@ -86,7 +86,7 @@ TEST(CommissionTest, StrongFormTesting){
     EXPECT_EQ(Commission(35, -1, 45), "stocks not in 1...80");
     EXPECT_EQ(Commission(35, 40, -2), "barrels not in 1...90");
     EXPECT_EQ(Commission(-2, -1, 45), "locks not in 1...70\nstocks not in 1...80");
-    EXPECT_EQ(Commission(-2, 40, -1), "locks not in 1...70\nbarels not in 1...90");
+    EXPECT_EQ(Commission(-2, 40, -1), "locks not in 1...70\nbarrels not in 1...90");
     EXPECT_EQ(Commission(35, -1, -1), "stocks not in 1...80\nbarrels not in 1...90");
     EXPECT_EQ(Commission(-2, -1, -1), "locks not in 1...70\nstocks not in 1...80\nbarrels not in 1...90");
 }

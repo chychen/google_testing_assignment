@@ -138,5 +138,62 @@ string NextDate(int month, int day, int year){
 }
 
 string Commission(int locks, int stocks, int barrels){
-    return "";
+    
+    if(locks==-1)return "Program terminates";
+
+    int lockPrice, stockPrice, barrelPrice;
+    int totalLocks, totalStocks, totalBarrels;
+    int lockSales, stockSales, barrelSales;
+    int sales, commission;
+    lockPrice = 45;
+    stockPrice = 30;
+    barrelPrice = 25;
+    totalLocks = 0;
+    totalStocks = 0;
+    totalBarrels = 0;
+
+    bool isValid = true;
+    string validMsg = "";
+
+    if(locks<1 || locks>70){
+        isValid = false;
+        validMsg = validMsg + "locks not in 1...70";
+    } 
+    if(stocks<1 || stocks>80){
+        isValid = false;
+        if(validMsg!="") validMsg = validMsg + "\nstocks not in 1...80";
+        else validMsg = validMsg + "stocks not in 1...80";
+    }
+    if(barrels<1 || barrels>90){
+        isValid = false;
+        if(validMsg!="") validMsg = validMsg + "\nbarrels not in 1...90";
+        else validMsg = validMsg + "barrels not in 1...90";
+    }
+    
+    if(!isValid){
+        return validMsg;
+    }else{
+        totalLocks += locks;
+        totalStocks += stocks;
+        totalBarrels += barrels;
+
+        lockSales = lockPrice * totalLocks;
+        stockSales = stockPrice * totalStocks;
+        barrelSales = barrelPrice * totalBarrels;
+        sales = lockSales + stockSales + barrelSales;
+        
+        if(sales>1800.0){
+            commission = 0.10 * 1000.0;
+            commission += 0.15 * 800.0;
+            commission += 0.2 * (sales-1800.0);
+        }else if(sales>1000.0){
+            commission = 0.10 * 1000.0;
+            commission += 0.15 * (sales-1000.0);
+        }else{
+            commission = 0.10 * sales;            
+        }
+        return "$" + to_string(commission);
+    }
+
+
 }

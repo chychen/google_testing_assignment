@@ -1,0 +1,39 @@
+Running main() from gtest_main.cc
+[==========] Running 3 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from TriangleTest
+[ RUN      ] TriangleTest.StrongFormTesting
+[       OK ] TriangleTest.StrongFormTesting (0 ms)
+[----------] 1 test from TriangleTest (0 ms total)
+
+[----------] 1 test from NextDateTest
+[ RUN      ] NextDateTest.StrongFormTesting
+[       OK ] NextDateTest.StrongFormTesting (0 ms)
+[----------] 1 test from NextDateTest (0 ms total)
+
+[----------] 1 test from CommissionTest
+[ RUN      ] CommissionTest.StrongFormTesting
+./StrongFormTesting.cpp:76: Failure
+      Expected: Commission(10, 10, 10)
+      Which is: "$100.000000"
+To be equal to: "$100"
+./StrongFormTesting.cpp:89: Failure
+      Expected: Commission(-2, 40, -1)
+      Which is: "locks not in 1...70\nbarrels not in 1...90"
+To be equal to: "locks not in 1...70\nbarels not in 1...90"
+With diff:
+@@ -1,2 +1,2 @@
+ locks not in 1...70
+-barrels not in 1...90
++barels not in 1...90
+
+[  FAILED  ] CommissionTest.StrongFormTesting (0 ms)
+[----------] 1 test from CommissionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 3 test cases ran. (0 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] CommissionTest.StrongFormTesting
+
+ 1 FAILED TEST
